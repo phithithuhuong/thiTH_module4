@@ -1,0 +1,1 @@
+{"version":3,"file":"car.schema.js","sourceRoot":"","sources":["../../../src/schemas/car.schema.ts"],"names":[],"mappings":";;;AAAA,uCAAsC;AAQrC,CAAC;AACF,MAAM,SAAS,GAAG,IAAI,iBAAM,CAAO;IAC/B,IAAI,EAAG,MAAM;IACb,IAAI,EAAG,MAAM;IACb,KAAK,EAAG,MAAM;IACd,IAAI,EAAG,MAAM;IACb,QAAQ,EAAG,MAAM;CACpB,CAAC,CAAC;AACH,MAAM,GAAG,GAAG,IAAA,gBAAK,EAAO,KAAK,EAAE,SAAS,CAAC,CAAC;AAClC,kBAAG"}

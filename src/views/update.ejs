@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<%- include("./layouts/head.ejs") -%>
+<body>
+<div class="container">
+    <h2>Stacked form update student</h2>
+    <form style="width: 60%" enctype="multipart/form-data" method="post" action="/update/<%= student.id %>">
+        <div class="form-group">
+            <label for="email">Name:</label>
+            <input type="text" class="form-control" id="name" value="<%= student.name %>" name="name">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Code:</label>
+            <input type="text" class="form-control" id="pwd" value="<%= student.code %>" name="code">
+        </div>
+        <div class="form-group">
+            <label for="pwd">pointLT:</label>
+            <input type="number" class="form-control" id="pwd" value="<%= student.pointLT %>" name="pointLT">
+        </div>
+        <div class="form-group">
+            <label for="pwd">pointTH:</label>
+            <input type="number" class="form-control" id="pwd" value="<%= student.pointTH %>" name="pointTH">
+        </div>
+        <div class="form-group">
+            <label for="pwd">description:</label>
+            <input type="text" class="form-control" id="pwd" value="<%= student.description %>" name="description">
+        </div>
+        <div class="form-group">
+            <label for="pwd">evaluates:</label>
+            <input type="text" class="form-control" id="pwd" value="<%= student.evaluates %>" name="evaluates">
+        </div>
+        <div class="form-group">
+            <label for="pwd">class:</label>
+            <input type="text" class="form-control" id="pwd" value="<%= student.class %>" name="class" readonly>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember"> Remember me
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="/list">
+            <button type="submit" class="btn btn-success"> Exit</button>
+        </a>
+    </form>
+
+</div>
+<%- include("./layouts/script.ejs") -%>
+</body>
+</html>

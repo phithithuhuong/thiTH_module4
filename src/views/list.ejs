@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<%- include("./layouts/head.ejs") -%>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="/list">List</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/create">Create</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/c09">C0922G1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/c10">C1022I1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/leaderboard">LEADERBOARD</a>
+            </li>
+            <li style="
+       text-align: right;" class="nav-item">
+                <form class="form-inline" method="post" enctype="multipart/form-data" action="/search">
+                    <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <h2>Bordered Table</h2>
+    <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Evaluates</th>
+            <th>Class</th>
+            <th colspan="2">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for( const students of student){ %>
+            <tr>
+                <td><a href="/list/<%= students.id %>"> <%= students.name %> </a></td>
+                <td><%= students.evaluates %></td>
+                <td><%= students.class %></td>
+                <td>
+                    <a href="/update/<%= students.id %>">
+                        <button type="submit" class="btn btn-info"> Update</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/delete/<%= students.id %>">
+                        <button type="submit" onclick="return confirm('Are you sure ?')" class="btn btn-danger">
+                            Delete
+                        </button>
+                    </a>
+                    </td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+</div>
+<%- include("./layouts/script.ejs") -%>
+</body>
+</html>
