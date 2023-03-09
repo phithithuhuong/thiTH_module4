@@ -1,73 +1,96 @@
+
 <!doctype html>
 <html lang="en">
 <%- include("./layouts/head.ejs") -%>
-<body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="/list">List</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/create">Create</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-        </ul>
+
+<body class="bg-light">
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="/list">List</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/create">Create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row justify-content-center pt-4">
+        <div class="col-6 shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="d-flex bd-highlight mb-3">
+                <div class="mr-auto p-2 bd-highlight">
+                    <h2>Student Information</h2>
+                </div>
+            </div>
+            <table class="table  table-borderless">
+                <tr>
+                    <th>Student name:</th>
+                    <td>
+                        <%- student.name %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Code:</th>
+                    <td>
+                        <%- student.code %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>PointLT:</th>
+                    <td>
+                        <%- student.pointLT %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>PointTH:</th>
+                    <td>
+                        <%- student.pointTH %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Point Avg:</th>
+                    <td>
+                        <%- student.avg %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>description:</th>
+                    <td>
+                        <%- student.description %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Evaluates:</th>
+                    <td>
+                        <%- student.evaluates %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Class:</th>
+                    <td>
+                        <%- student.class %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/list">Back to student list</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-</nav>
-<div class="container">
-    <h2>Bordered Table</h2>
-    <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>code</th>
-            <th>pointLT</th>
-            <th>pointTH</th>
-            <th>pointAll</th>
-            <th>description</th>
-            <th>evaluates</th>
-            <th>class</th>
-            <th colspan="2">Action</th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td> <%= student.name %></td>
-                <td><%= student.code %></td>
-                <td><%= student.pointLT %></td>
-                <td><%= student.pointTH %></td>
-                <td><%= student.avg %></td>
-                <td><%= student.description %></td>
-                <td><%= student.evaluates %></td>
-                <td><%= student.class %></td>
-                <td>
-                    <a href="/update/<%= student.id %>">
-                        <button type="submit" class="btn btn-info"> Update</button>
-                    </a>
-                </td>
-                <td>
-                    <a href="/delete/<%= student.id %>">
-                        <button type="submit" onclick="return confirm('Are you sure ?')" class="btn btn-danger">
-                            Delete
-                        </button>
-                    </a>
-                </td>
-                <td>
-                    <a href="/list">
-                        <button type="submit" class="btn btn-success"> Exit</button>
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+</div>
+</div>
+</div>
 </div>
 <%- include("./layouts/script.ejs") -%>
 </body>

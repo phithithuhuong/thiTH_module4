@@ -63,7 +63,7 @@ class StudentControllers {
     }
     async leaderboard(req: Request, res: Response) {
         try {
-            let student = await Student.find().sort({avg:-1})
+            let student = await Student.find().sort({avg:1})
             res.render('leaderboard', {student: student})
 
         } catch (err) {
